@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sketch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+  </head>
+
+  <body>
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+      <h1 id="main-title">教科3A戴翔毓</h1>
+    </div>
+
+    <nav id="side-menu">
+      <ul>
+        <li><a href="#" id="link-work">第一單元作品</a></li>
+        <li><a href="#" id="link-notes">第一單元講義</a></li>
+        <li><a href="#" id="link-quiz">測驗系統</a></li>
+        <li><a href="#">回到首頁</a></li>
+      </ul>
+    </nav>
+
+    <!-- Iframe 容器 -->
+    <div id="iframe-container" class="hidden">
+      <button id="iframe-close-btn">&times;</button>
+      <iframe id="content-iframe" src="" frameborder="0"></iframe>
+    </div>
+
+    <!-- 測驗容器 -->
+    <div id="quiz-container" class="hidden">
+      <button id="quiz-close-btn">&times;</button>
+      <h2>JavaScript 基礎測驗</h2>
+      <div id="quiz-content">
+        <!-- 問題一 -->
+        <div class="quiz-question" data-question="1">
+          <p>1. 在 JavaScript 中，以下哪一個是宣告變數的正確關鍵字？</p>
+          <label><input type="radio" name="q1" value="a"> v</label>
+          <label><input type="radio" name="q1" value="b"> let</label>
+          <label><input type="radio" name="q1" value="c"> string</label>
+          <label><input type="radio" name="q1" value="d"> declare</label>
+        </div>
+        <!-- 問題二 -->
+        <div class="quiz-question hidden" data-question="2">
+          <p>2. 如何在 JavaScript 中建立一個彈出式警告視窗顯示 "Hello World"？</p>
+          <label><input type="radio" name="q2" value="a"> msgBox("Hello World");</label>
+          <label><input type="radio" name="q2" value="b"> alert("Hello World");</label>
+          <label><input type="radio" name="q2" value="c"> window.alert("Hello World");</label>
+          <label><input type="radio" name="q2" value="d"> b 和 c 皆是</label>
+        </div>
+        <!-- 問題三 -->
+        <div class="quiz-question hidden" data-question="3">
+          <p>3. 以下哪一個是建立函式 (function) 的正確語法？</p>
+          <label><input type="radio" name="q3" value="a"> function = myFunction() { ... }</label>
+          <label><input type="radio" name="q3" value="b"> function myFunction() { ... }</label>
+          <label><input type="radio" name="q3" value="c"> create function myFunction() { ... }</label>
+          <label><input type="radio" name="q3" value="d"> def myFunction() { ... }</label>
+        </div>
+      </div>
+      <button id="quiz-next-btn" class="hidden">下一題</button>
+      <div id="quiz-result"></div>
+    </div>
+
+    <script src="sketch.js"></script>
+  </body>
+</html>
